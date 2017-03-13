@@ -7,8 +7,9 @@ let hbsSelect = require('hbs/select');
 let hbarTmpl = hbar.compile(hbsSelect);
 
 class SelectBox extends ReduxComponent {
-  constructor(legacyStore, container = document.body) {
+  constructor(par = {legacyStore: null, container: document.body}) {
     // console.log(super);
+    let { legacyStore, container} = par;
     super(legacyStore);
     
     this.store.subscribe(() => {
@@ -23,7 +24,6 @@ class SelectBox extends ReduxComponent {
         return Object.assign({}, state, { optionCount: state.optionCount - 1, totalCount: state.totalCount - 1 });
       }
     };
-    console.log(ReduxComponent.extendReducer);
     ReduxComponent.extendReducers(reducers);
     
     this.container = container;

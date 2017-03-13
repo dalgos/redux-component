@@ -38,18 +38,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: false,
-      compress: {
-        warnings: true,
-        // optional: don't convert foo["bar"] to foo.bar
-        properties: false,
-      },
-      output: {
-        comments: false,
-        quote_keys: true,
-      },
-    })
+    // new webpack.optimize.UglifyJsPlugin({
+    //   mangle: false,
+    //   compress: {
+    //     warnings: true,
+    //     // optional: don't convert foo["bar"] to foo.bar
+    //     properties: false,
+    //   },
+    //   output: {
+    //     comments: false,
+    //     quote_keys: true,
+    //   },
+    // })
   ],
   watch: true
 };
