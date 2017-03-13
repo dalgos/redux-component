@@ -1,18 +1,15 @@
 const Store = require('store/Store');
 const ReduxComponent = require('components/ReduxComponent');
 
-let hbar = require('handlebars');
-let hbsSelect = require('hbs/select');
-
-let hbarTmpl = hbar.compile(hbsSelect);
+let hbarTmpl = require('hbs/select');
 
 class SelectBox extends ReduxComponent {
   constructor(par = {legacyStore: null, container: document.body}) {
     // console.log(super);
-    let { legacyStore, container} = par;
+    let { legacyStore, container } = par;
     super(legacyStore);
     
-    this.store.subscribe(() => {
+    this.subscribe(() => {
       this.render();
     });
     
@@ -39,9 +36,10 @@ class SelectBox extends ReduxComponent {
   }
   
   render() {
+    console.log('selectBox::Render')
     this.container.innerHTML = '';
     this.wrapper = document.createElement('div');
-    this.wrapper.innerHTML = hbarTmpl(this.store.getState());
+    this.wrapper.innerHTML = hbarTmpl(this.state);
     this.views = this.wrapper.children[0];
     this.createAction('._button', this.views);
     this.container.appendChild(this.views);

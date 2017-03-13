@@ -13,9 +13,10 @@ ReduxComponent.setState(countState);
 let rdux = new ReduxComponent();
 rdux.subscribe(render);
 
-let sbox1 = new ViewSelectBox(rdux.store, document.querySelector('#optionGroup1'));
+let sbox1 = new ViewSelectBox({legacyStore: rdux.store, container: document.querySelector('#optionGroup1')});
 
 function render() {
-  document.querySelector('#result').innerHTML = rdux.store.getState().totalCount.toString();
+  console.log('render');
+  document.querySelector('#result').innerHTML = rdux.state.totalCount.toString();
 }
 render();

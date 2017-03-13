@@ -20,19 +20,18 @@ class ReduxComponent {
   dispatch(action) {
     store.dispatch(action);
   }
+  
   subscribe(render) {
+    console.log(render);
     store.subscribe(render);
+  }
+  
+  get state() {
+    return store.getState();
   }
   
   get store() {
     return store;
-  }
-  set store(newStore) {
-    throw new Error('You can not overwritten store.');
-  }
-  
-  getState() {
-    return store.getState();
   }
   
   static extendReducer(nameSpace, reducer) {
@@ -46,6 +45,7 @@ class ReduxComponent {
     for (let prop in reducersMap) {
       this.extendReducer(prop, reducersMap[prop]);
     }
+    // combineReducers(reducersMap);
   }
   static reduceReducer(nameSpace) {
     if (reducers.hasOwnProperty(nameSpace)) {
