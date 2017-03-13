@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   resolve: {
+    extensions: ['.js', '.hbs'],
     modules: [
       'node_modules',
       path.resolve(__dirname, 'src')
@@ -30,6 +31,10 @@ module.exports = {
           ]
         },
       },
+      {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader'
+      }
     ]
   },
   plugins: [

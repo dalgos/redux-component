@@ -2,11 +2,7 @@ const Store = require('store/Store');
 const ReduxComponent = require('components/ReduxComponent');
 
 let hbar = require('handlebars');
-let hbsSelect = '<div>\
-  <div>{{ optionCount }}</div>\
-  <button class="_button" data-action-type="OPTION_UP">UP</button>\
-  <button class="_button" data-action-type="OPTION_DOWN">DOWN</button>\
-</div>';
+let hbsSelect = require('hbs/select');
 
 let hbarTmpl = hbar.compile(hbsSelect);
 
