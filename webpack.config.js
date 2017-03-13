@@ -26,25 +26,25 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['es2015', {modules: false}]
+            ['es2015']
           ]
-        }
+        },
       },
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   mangle: false,
-    //   compress: {
-    //     warnings: true,
-    //     // optional: don't convert foo["bar"] to foo.bar
-    //     properties: false,
-    //   },
-    //   output: {
-    //     comments: false,
-    //     quote_keys: true,
-    //   },
-    // })
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
+      compress: {
+        warnings: true,
+        // optional: don't convert foo["bar"] to foo.bar
+        properties: false,
+      },
+      output: {
+        comments: false,
+        quote_keys: true,
+      },
+    })
   ],
   watch: true
 };

@@ -4,6 +4,7 @@ const { combineReducers } = require('redux');
 let store;
 let initialState;
 let reducers = {};
+
 function reducer(state = initialState, action) {
   if (reducers.hasOwnProperty(action.type)) {
     return reducers[action.type](state, action);
