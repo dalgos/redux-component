@@ -1,0 +1,9 @@
+<div>
+  {{#each selects as |select|}}
+  <select>
+    {{#each select}}
+    <option value="{{ val }}" data-id="{{ id }}" {{#if selected}}selected="selected"{{/if}}>{{ text }}</option>
+    {{/each}}
+  </select>
+  {{/each}}
+</div>

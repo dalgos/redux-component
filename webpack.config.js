@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   entry: {
-    redux: './src/index.js'
+    redux: './src/index.js',
   },
   output: {
     path: __dirname + '/public/js',
@@ -34,7 +34,12 @@ module.exports = {
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader'
-      }
+      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'es3ify-loader',
+      //   enforce: 'post'
+      // }
     ]
   },
   plugins: [
