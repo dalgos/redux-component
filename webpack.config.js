@@ -6,10 +6,16 @@ module.exports = {
     extensions: ['.js', '.hbs'],
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src')
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'parents'),
+      path.resolve(__dirname, 'roots'),
+      path.resolve(__dirname, 'modules'),
+      path.resolve(__dirname, 'components'),
+      path.resolve(__dirname, 'actions'),
+      path.resolve(__dirname, 'reducers'),
     ],
     alias: {
-      'handlebars': 'handlebars/dist/handlebars.js'
+      'handlebars': 'handlebars/dist/handlebars.js',
     }
   },
   entry: {
