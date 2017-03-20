@@ -27,22 +27,21 @@
 // 
 const { createStore, combineReducers } = require('redux');
 const dr = require('domready');
+const initialState = { 
+  count: 0,
+  images: [
+    'https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67',
+    'https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67',
+  ]
+ };
 
-const store = createStore(combineReducers({
-  count: count
-}), {count: 0});
+const dealDetailReducers = require('dealDetailReducer');
+const store = createStore(combineReducers(dealDetailReducers), initialState);
 
 const CounterM = require('CounterM');
+const Images = require('Images');
 
-let counter = new CounterM({ initialStore: store, container: document.querySelector('#counter') });
-
-function count(state = 0, action) {
-  switch(action.type) {
-    case 'UP':
-      return state + 1;
-    case 'DOWN':
-      return state + 2;
-    default:
-      return state;
-  }
-}
+dr(() => {
+  let counter = new CounterM({ initialStore: store, container: document.querySelector('#counter') });
+  let images = new Images({ initialStore: store, container: document.querySelector('#images') });
+});

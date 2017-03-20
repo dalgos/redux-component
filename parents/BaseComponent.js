@@ -10,15 +10,26 @@
 
 class BaseComponent {
   constructor({ initialStore = null, container = document.body } = {}) {
-    this.__store = null;
+    this.__store = initialStore;
     this.__container = container;
-    if (initialStore && this.render) {
-      this.__store = initialStore;
+    if (this.__store) {
       this.__store.subscribe(() => {
         this.render();
       });
     }
-    this.initialRender && this.initialRender();
+    this.initialRender();
+  }
+  getState() {
+    return this.__store.getState();
+  }
+  dispatch(action) {
+    return this.__store.dispatch(action);
+  }
+  initialRender() {
+    // InitialRender.
+  }
+  render() {
+    // Render.
   }
   // constructor({ initialStore = null, initialState = {}, container = document.body } = {}) {
   //   if (initialStore && initialStore instanceof Storage) { 
