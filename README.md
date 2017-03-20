@@ -1,6 +1,6 @@
 #Redux-Component Sample
 
-## Intall pkgs.
+## Install pkgs.
 
 ```bash
 $ npm install
