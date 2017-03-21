@@ -13,6 +13,7 @@ module.exports = {
       path.resolve(__dirname, 'components'),
       path.resolve(__dirname, 'actions'),
       path.resolve(__dirname, 'reducers'),
+      path.resolve(__dirname, 'libs'),
     ],
     alias: {
       'handlebars': 'handlebars/dist/handlebars.js',

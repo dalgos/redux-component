@@ -1,6 +1,3 @@
-//hbs
-//dispatch
-
 const tmpl = require('hbs/counter.hbs');
 const Counter = require('Counter');
 const $ = require('jquery');
@@ -13,7 +10,6 @@ class CounterM extends Counter {
     this.dispatcher.on('click', (evt) => {
       this.dispatch({ type: evt.target.dataset.actionType });
     });
-    
     $(this.__container).append(this.dom);
   }
   render() {
