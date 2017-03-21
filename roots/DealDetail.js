@@ -1,3 +1,7 @@
+// load components
+const CounterM = require('CounterM');
+const Images = require('Images');
+
 // initialize default reducer & state.
 const initialState = { 
   count: 0,
@@ -12,10 +16,6 @@ const dealDetailReducers = require('dealDetailReducer');
 const dr = require('domready');
 const Storage = require('Storage');
 const storage = new Storage({ reducers: dealDetailReducers, initialState });
-
-// load components
-const CounterM = require('CounterM');
-const Images = require('Images');
 
 // initialize.
 dr(() => {

@@ -9,6 +9,20 @@ class Images extends BaseComponent {
   render() {
     
   }
+  /**
+   * Reducers for Self Component
+   * @return Function Reducer
+   */
+  static reducers(state = [], action) {
+    return state;
+  }
+  /**
+   * Return reducer's maps
+   * @return Object Reducer's map
+   */
+  static getReducers() {
+    
+  }
 }
 
 module.exports = Images;
