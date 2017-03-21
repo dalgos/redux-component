@@ -10,7 +10,6 @@ module.exports = {
       path.resolve(__dirname, 'roots'),
       path.resolve(__dirname, 'actions'),
       path.resolve(__dirname, 'reducers'),
-      path.resolve(__dirname, 'libs'),
       path.resolve(__dirname, 'Core'),
       path.resolve(__dirname, 'DataComponents'),
       path.resolve(__dirname, 'ViewComponents'),
