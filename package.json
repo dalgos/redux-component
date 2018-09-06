@@ -20,7 +20,7 @@
     "handlebars": "^4.0.6",
     "handlebars-loader": "^1.4.0",
     "jade": "~1.11.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.0.0",
     "morgan": "~1.7.0",
     "redux": "^3.6.0",
     "serve-favicon": "~2.3.2",
